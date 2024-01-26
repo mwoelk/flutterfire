@@ -19,11 +19,6 @@
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
 
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="require-trusted-types-for 'script'"
-    />
-
     <title>Firebase Core Example</title>
     <link rel="manifest" href="manifest.json" />
 
@@ -35,11 +30,9 @@
     <script src="flutter.js" defer></script>
   </head>
   <body>
+    <script src="./firebase-app-compat.js"></script>
     <script>
-      document.addEventListener(
-        'securitypolicyviolation',
-        console.error.bind(console)
-      );
+      window.flutterfire_ignore_scripts = ['core', 'messaging'];
 
       window.addEventListener('load', function (ev) {
         // Download main.dart.js
